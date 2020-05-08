@@ -17,21 +17,21 @@ export default () => {
 						<p>Caso ainda não esteja familiarizado com nossa a interface, aqui vai um breve tutorial.</p>
 					</div>
 
-					<div className="row justify-content-center mt-4">
+					<div className="pl-3 row justify-content-center mt-4">
 						<h3>Como cadastrar os produtos?</h3>
 					</div>
 
 					<div className="pl-3 pr-3 row justify-content-center mt-2">
 						<p>Primeiro vamos acessar a página de cadastro usando o menu. Clique em "Cadastrar".</p>
 					</div>
-					<div className="row justify-content-center mt-0">
+					<div className="pl-3 row justify-content-center mt-0">
 						<small>Uma dica: abra em outra aba para continuar acompanhando o tutorial</small>
 					</div>
 					<div className="pl-3 pr-3 row justify-content-center mt-4">
 						<p>Agora você vai ver dois campos para serem preenchidos. São eles, respectivamente, o nome do ingrediente e a métrica.</p>
 					</div>
 					<div className="row justify-content-center">
-						<div class="card-header p-4 w-100">
+						<div className="card-header p-4 w-100">
 							<div className="row justify-content-center mt-0">
 								<small><b>Mas o que é uma métrica?</b></small>
 							</div>
@@ -46,7 +46,7 @@ export default () => {
 					</div>
 
 					<div className="row justify-content-center">
-						<div class="card-header p-4 w-100">
+						<div className="card-header p-4 w-100">
 							<div className="row justify-content-center mt-0">
 								<small><b>Mas eu compro o pacote de macarrão em gramas!</b></small>
 							</div>
@@ -60,7 +60,7 @@ export default () => {
 						<p>Agora que você já digitou o ingrediente e escolheu sua métrica, clique em cadastrar. Pronto, seu produto já foi cadastrado!</p>
 					</div>
 					<div className="row justify-content-center">
-						<div class="card-header p-4 w-100">
+						<div className="card-header p-4 w-100">
 							<div className="row justify-content-center mt-0">
 								<small><b>Digitei macarrão errado, e agora?!</b></small>
 							</div>
@@ -71,15 +71,15 @@ export default () => {
 						</div>
 					</div>
 
-					<div className="row justify-content-center mt-4">
+					<div className="pl-3 row justify-content-center mt-4">
 						<h3>Como imprimir a lista de compras</h3>
 					</div>
-					<div className="pl-3 pr-3 row justify-content-center mt-2">
+					<div className="pl-3 pr- row justify-content-center mt-2">
 						<p>No menu superior, clique em "Gerar Lista". Agora estamos na página de criação da lista de compras. Esta é a parte mais simples, basta digitar as quantidades que devem ser compradas e clicar em "Gerar Lista".</p>
 					</div>
 
 					<div className="row justify-content-center mb-4">
-						<div class="card-header w-100 p-4">
+						<div className="card-header w-100 p-4">
 							<div className="row justify-content-center mt-0">
 								<small><b>Mas e se ficar algum item com quantidade zero, ele também será impresso?</b></small>
 							</div>
