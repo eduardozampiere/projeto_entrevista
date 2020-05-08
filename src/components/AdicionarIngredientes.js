@@ -26,7 +26,7 @@ class AdicionarIngredientes extends Component{
 		return Object.keys(ingredientes).map( ingrediente => {
 			return Object.keys(ingredientes[ingrediente]).map(metrica => {
 				return (
-					<tr>
+					<tr key={ingrediente+'-'+metrica}>
 						<td property={ingrediente} >{ingrediente}</td>
 						<td property={metrica} >{metrica} <span className="float-right"><FaTrashAlt onClick={ this.remover.bind(this, ingrediente, metrica)}/></span></td>
 					</tr>
@@ -41,7 +41,6 @@ class AdicionarIngredientes extends Component{
 
 		if(!this.iRef.current.value){
 			Swal.fire({
-				// title: 'Opa!',
 				text: 'Voce precisa dizer o nome do ingrediente!',
 				icon: 'info'
 			})
@@ -50,7 +49,6 @@ class AdicionarIngredientes extends Component{
 
 		if(!this.mRef.current.value){
 			Swal.fire({
-				// title: 'Opa!',
 				text: 'Voce precisa dizer a métrica do ingrediente!',
 				icon: 'info'
 			})
@@ -76,9 +74,9 @@ class AdicionarIngredientes extends Component{
 		return (
 		<>
 			<Header />
-			<div className="container mt-2 w-75">
+			<div className="container p-sm-0 mt-2">
 			<div className="row justify-content-center">
-				<div className="card">
+				<div className="card col-sm-12 col-lg-9 p-0 ml-1 mr-1">
 					<div className="card-header bg-header text-white">
 						<b>ADICIONAR INGREDIENTES</b>
 					</div>
@@ -113,8 +111,8 @@ class AdicionarIngredientes extends Component{
 						<table className="col-12 table table-hover mt-2">
 							<thead>
 								<tr>
-									<th>INGREDIENTE</th>
-									<th>MÉTRICA</th>
+									<th scope="col">INGREDIENTE</th>
+									<th scope="col">MÉTRICA</th>
 								</tr>
 							</thead>
 

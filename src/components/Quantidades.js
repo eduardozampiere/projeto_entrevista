@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 function vazio(obj){
@@ -17,16 +16,15 @@ class Quantidades extends Component{
 	renderData(ingredientes){
 		if(vazio(ingredientes)){
 			return (
-					<tr>Nenhum ingrediente cadastrado!</tr>
+					<tr><td>Nenhum ingrediente cadastrado!</td></tr>
 				)
 		}
 		return Object.keys(ingredientes).map( ingrediente => {
 			return Object.keys(ingredientes[ingrediente]).map(metrica => {
 				return (
-					<tr print={ ingredientes[ingrediente][metrica].value <= 0 || !ingredientes[ingrediente][metrica].value ? "noPrint" : "print" }>
+					<tr key={ingrediente+'-'+metrica} print={ ingredientes[ingrediente][metrica].value <= 0 || !ingredientes[ingrediente][metrica].value ? "noPrint" : "print" }>
 						<td>{ingrediente}</td>
-						<td><input onBlur={ e => this.alterarQuantidade(ingrediente, metrica, e) } className="form-control" defaultValue={ingredientes[ingrediente][metrica].value} type="number" /></td>
-						<td>{metrica}</td>
+						<td><input onBlur={ e => this.alterarQuantidade(ingrediente, metrica, e) } className="form-control input-qtd" defaultValue={ingredientes[ingrediente][metrica].value} type="number" /> <span>{metrica}</span></td>
 					</tr>
 					)
 			});
@@ -36,8 +34,17 @@ class Quantidades extends Component{
 	alterarQuantidade(ingrediente, metrica, e){
 		let quantidade = e.currentTarget.value;
 		quantidade = parseFloat(quantidade);
+		if( !isNaN(quantidade) && quantidade >= 0){
+			e.currentTarget.value = quantidade;		
+			this.props.alterar(ingrediente, metrica, quantidade);
 
-		this.props.alterar(ingrediente, metrica, quantidade);
+		}else{
+			e.currentTarget.value = 0;
+			Swal.fire({
+				icon: 'error',
+				text: 'Valor inválido'
+			})	
+		}
 	}
 
 	imprimir(){
@@ -63,10 +70,9 @@ class Quantidades extends Component{
 			<>
 				<Header />
 
-				<div className="container mt-2 w-75">
+				<div className="container p-sm-0 mt-2">
 					<div className="row justify-content-center">
-					<div className="col-lg-9 col-sm-12">
-						<div className="card">
+						<div className="card col-sm-12 col-lg-9 p-0 ml-1 mr-1">
 							<div className="card-header bg-header text-white">
 								<b>GERAR LISTA DE COMPRAS</b>
 							</div>
@@ -76,9 +82,8 @@ class Quantidades extends Component{
 								<table className="col-12 table table-hover mt-2">
 									<thead>
 										<tr>
-											<th className="col-6">INGREDIENTE</th>
-											<th className="col-3">QTD</th>
-											<th className="col-3">MÉTRICA</th>
+											<th scope="col">INGREDIENTE</th>
+											<th scope="col" className="text-center">QUANTIDADE</th>
 										</tr>
 									</thead>
 
@@ -88,8 +93,7 @@ class Quantidades extends Component{
 								</table>
 							</div>
 						</div>
-					</div>
-
+				
 					</div>
 				</div>
 			</>

@@ -30,6 +30,10 @@
 		display: none !important;
 	}
 
+	*{
+		font-size: 30px !important;
+	}
+
 }
 
 svg{
@@ -66,4 +70,16 @@ p, small{
 
 body{
 	font-family: "SulSans", Helvetica, sans-serif;
+}
+
+.input-qtd{
+	min-width: 70px;
+	text-align: right;
+	width: 60% !important;
+	display: inline-block;
+	padding-right: 5px;
+}
+
+td{
+	width: 50%;
 }
