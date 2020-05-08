@@ -44,9 +44,6 @@ p, small{
 	background-color: #29C373;
 }
 
-nav{
-	background-color: #F5F3F4 !important;
-}
 
 .nav-link, .navbar-brand{
 	color: #222 !important;
@@ -70,4 +67,3 @@ nav{
 body{
 	font-family: "SulSans", Helvetica, sans-serif;
 }
-

@@ -65,6 +65,7 @@ class Quantidades extends Component{
 
 				<div className="container mt-2 w-75">
 					<div className="row justify-content-center">
+					<div className="col-lg-9 col-sm-12">
 						<div className="card">
 							<div className="card-header bg-header text-white">
 								<b>GERAR LISTA DE COMPRAS</b>
@@ -76,7 +77,7 @@ class Quantidades extends Component{
 									<thead>
 										<tr>
 											<th className="col-6">INGREDIENTE</th>
-											<th className="col-3">QUANTIDADE</th>
+											<th className="col-3">QTD</th>
 											<th className="col-3">MÉTRICA</th>
 										</tr>
 									</thead>
@@ -87,6 +88,7 @@ class Quantidades extends Component{
 								</table>
 							</div>
 						</div>
+					</div>
 
 					</div>
 				</div>
