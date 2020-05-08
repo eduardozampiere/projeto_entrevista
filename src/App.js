@@ -6,13 +6,7 @@ class App extends Component{
 	constructor(props){
 		super(props);
 		this.state = {};
-		this.state.ingredientes = {
-			'Macarrao': {
-				'g':{
-					value: 1
-				}
-			}
-		};
+		this.state.ingredientes = {};
 	}
 
 	cadastrar = async (ingrediente, metrica) => {
